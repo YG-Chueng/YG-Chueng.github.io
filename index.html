@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yingguang Zhang — Guanghua School of Management, Peking University</title>
+<meta name="description" content="Yingguang Zhang, Associate Professor of Finance at Guanghua School of Management, Peking University. Research on asset pricing, expectations, and machine learning.">
+<link rel="canonical" href="https://yg-chueng.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Yingguang Zhang — Finance, Peking University">
+<meta property="og:description" content="Associate Professor of Finance at Peking University. Research on asset pricing, expectations, information, and machine learning.">
+<meta property="og:url" content="https://yg-chueng.github.io/">
+<meta property="og:image" content="https://yg-chueng.github.io/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Yingguang Zhang, Associate Professor of Finance at Peking University">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://yg-chueng.github.io/og.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Yingguang Zhang",
+  "alternateName": ["Conson Zhang", "张英广"],
+  "jobTitle": "Associate Professor of Finance",
+  "affiliation": {
+    "@type": "Organization",
+    "name": "Guanghua School of Management, Peking University"
+  },
+  "url": "https://yg-chueng.github.io/",
+  "email": "mailto:yingguang.zhang@gsm.pku.edu.cn",
+  "sameAs": [
+    "https://en.gsm.pku.edu.cn/faculty/yingguang.zhang/",
+    "https://www.gsm.pku.edu.cn/faculty/yingguang.zhang/"
+  ]
+}
+</script>
+<style>
+  :root {
+    --paper: #FCFBF9;
+    --ink: #191817;
+    --soft: #6E6A63;
+    --rule: #E4E0D8;
+    --accent: #8A1F1A;
+    --tag-bg: #F3EFE8;
+    --measure: 660px;
+    --gutter: 130px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection { background: var(--accent); color: var(--paper); }
+
+  a { color: var(--ink); text-decoration-color: rgba(138,31,26,.45); text-underline-offset: 3px; transition: color .15s, text-decoration-color .15s; }
+  a:hover { color: var(--accent); text-decoration-color: var(--accent); }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+  .mono { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace; }
+  .skip-link {
+    position: fixed;
+    left: 16px;
+    top: 12px;
+    z-index: 10;
+    transform: translateY(-160%);
+    background: var(--ink);
+    color: var(--paper);
+    padding: 8px 12px;
+  }
+  .skip-link:focus { transform: none; }
+
+  /* ---------- frame ---------- */
+  .page {
+    max-width: calc(var(--measure) + var(--gutter) + 64px);
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+  main { max-width: var(--measure); }
+  @media (min-width: 1060px) {
+    main { margin-left: var(--gutter); }
+  }
+
+  /* ---------- top bar ---------- */
+  .topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 22px 0 18px;
+    border-bottom: 1px solid var(--ink);
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    font-size: 11px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--soft);
+  }
+  .topbar nav { display: flex; gap: 22px; }
+  .topbar a { text-decoration: none; color: var(--soft); }
+  .topbar a:hover { color: var(--accent); }
+
+  /* ---------- header / about ---------- */
+  header.about {
+    display: grid;
+    grid-template-columns: 1fr 168px;
+    gap: 40px;
+    padding: 64px 0 48px;
+    align-items: start;
+  }
+  .eyebrow {
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    font-size: 11px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 18px;
+  }
+  h1 {
+    font-weight: 500;
+    font-size: clamp(34px, 5vw, 44px);
+    line-height: 1.08;
+    letter-spacing: -0.01em;
+    margin-bottom: 14px;
+  }
+  .role { font-size: 19px; line-height: 1.5; margin-bottom: 22px; }
+  .role em { font-style: italic; }
+  .bio { color: #33302C; max-width: 56ch; }
+  .bio + .bio { margin-top: 12px; }
+  .links {
+    margin-top: 26px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 26px;
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    font-size: 12.5px;
+    letter-spacing: .02em;
+  }
+  .links a { text-decoration: none; border-bottom: 1px solid rgba(138,31,26,.45); padding-bottom: 1px; }
+  .links a:hover { border-color: var(--accent); }
+  .portrait {
+    width: 168px;
+    aspect-ratio: 296 / 428;
+    object-fit: cover;
+    filter: grayscale(18%) contrast(1.02);
+    border: 1px solid var(--rule);
+  }
+  .portrait-caption {
+    margin-top: 8px;
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    font-size: 10.5px;
+    color: var(--soft);
+    letter-spacing: .06em;
+    text-transform: uppercase;
+  }
+
+  /* ---------- sections ---------- */
+  section {
+    position: relative;
+    padding: 46px 0 40px;
+    border-top: 1px solid var(--rule);
+  }
+  .sec-num {
+    font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 30px;
+    color: var(--soft);
+    line-height: 1;
+  }
+  @media (min-width: 1060px) {
+    .sec-num {
+      position: absolute;
+      left: calc(-1 * var(--gutter));
+      top: 46px;
+      width: calc(var(--gutter) - 36px);
+      text-align: right;
+    }
+  }
+  @media (max-width: 1059px) {
+    .sec-num { display: block; margin-bottom: 4px; }
+  }
+  h2 {
+    font-weight: 500;
+    font-size: 26px;
+    letter-spacing: -0.01em;
+    margin-bottom: 26px;
+  }
+
+  h3 {
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--soft);
+    margin: 34px 0 6px;
+  }
+  h3:first-of-type { margin-top: 0; }
+
+  /* ---------- paper list: the journal ToC ---------- */
+  ol.papers { list-style: none; counter-reset: paper; }
+  ol.papers.counted li { counter-increment: paper; }
+  ol.papers li {
+    position: relative;
+    padding: 16px 0 16px 46px;
+    border-bottom: 1px solid var(--rule);
+  }
+  ol.papers li:last-child { border-bottom: none; }
+  ol.papers.counted li::before {
+    content: counter(paper, decimal-leading-zero);
+    position: absolute;
+    left: 0; top: 20px;
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    font-size: 11.5px;
+    color: var(--soft);
+  }
+  .paper-title { font-size: 17.5px; font-weight: 500; line-height: 1.4; }
+  .paper-title a { text-decoration-thickness: 1px; }
+  .paper-meta {
+    margin-top: 3px;
+    font-size: 15.5px;
+    font-style: italic;
+    color: var(--soft);
+  }
+  .paper-tags { margin-top: 8px; display: flex; flex-wrap: wrap; gap: 6px; }
+  .tag {
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    font-size: 10.5px;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    background: var(--tag-bg);
+    border: 1px solid var(--rule);
+    padding: 3px 8px 2px;
+    color: #4C4841;
+  }
+  .tag.venue { color: var(--accent); border-color: rgba(138,31,26,.35); background: transparent; }
+
+  /* ---------- teaching & simple two-column rows ---------- */
+  dl.rows > div {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 4px 24px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--rule);
+    align-items: baseline;
+  }
+  dl.rows > div:last-child { border-bottom: none; }
+  dl.rows dt { font-size: 16.5px; }
+  dl.rows dt .lvl { font-style: italic; color: var(--soft); font-size: 14.5px; }
+  dl.rows dd {
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    font-size: 11.5px;
+    color: var(--soft);
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  /* ---------- footer ---------- */
+  footer {
+    margin-top: 56px;
+    border-top: 1px solid var(--ink);
+    padding: 26px 0 60px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px 32px;
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    font-size: 11px;
+    letter-spacing: .05em;
+    color: var(--soft);
+  }
+  footer a { color: var(--soft); }
+
+  /* ---------- small screens ---------- */
+  @media (max-width: 640px) {
+    .page { padding: 0 20px; }
+    .topbar { align-items: flex-start; gap: 12px; }
+    .topbar nav { flex-wrap: wrap; justify-content: flex-end; gap: 8px 14px; }
+    header.about { grid-template-columns: 1fr; padding-top: 44px; }
+    .portrait { width: 132px; order: -1; }
+    .topbar nav { gap: 14px; }
+    ol.papers li { padding-left: 38px; }
+    dl.rows dd { text-align: left; }
+    dl.rows > div { grid-template-columns: 1fr; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { transition: none !important; }
+  }
+
+  /* quiet entrance */
+  @media (prefers-reduced-motion: no-preference) {
+    header.about, section { animation: rise .5s ease both; }
+    section:nth-of-type(1) { animation-delay: .05s; }
+    section:nth-of-type(2) { animation-delay: .1s; }
+    section:nth-of-type(3) { animation-delay: .15s; }
+  }
+  @keyframes rise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#content">Skip to content</a>
+<div class="page">
+  <div class="topbar">
+    <span>Yingguang Zhang</span>
+    <nav aria-label="Primary navigation">
+      <a href="#research">Research</a>
+      <a href="#data">Data</a>
+      <a href="#teaching">Teaching</a>
+      <a href="#service">Service</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+
+  <main id="content">
+    <!-- ================= ABOUT ================= -->
+    <header class="about">
+      <div>
+        <p class="eyebrow">Guanghua School of Management · Peking University</p>
+        <h1>Yingguang Zhang <span lang="zh-Hans">张英广</span></h1>
+        <p class="role">Associate Professor of <em>Finance</em></p>
+        <p class="bio">I am a financial economist specializing in asset pricing. My research studies expectations, information, behavioral finance, real estate, and the use of artificial intelligence and machine learning in financial markets.</p>
+        <p class="bio">I received my Ph.D. in Finance from the USC Marshall School of Business and my B.A. degrees in Economics and Statistics from UC Berkeley.</p>
+        <div class="links">
+          <a href="assets/cv.pdf">Curriculum Vitae ↓</a>
+          <a href="mailto:yingguang.zhang@gsm.pku.edu.cn">yingguang.zhang@gsm.pku.edu.cn</a>
+          <a href="https://en.gsm.pku.edu.cn/faculty/yingguang.zhang/" rel="external">PKU Guanghua ↗</a>
+        </div>
+      </div>
+      <div>
+        <img class="portrait" src="assets/profile.jpg" alt="Portrait of Yingguang Zhang">
+        <p class="portrait-caption">Beijing, China</p>
+      </div>
+    </header>
+
+    <!-- ================= RESEARCH ================= -->
+    <section id="research">
+      <span class="sec-num">01</span>
+      <h2>Research</h2>
+
+      <h3>Published &amp; Forthcoming</h3>
+      <ol class="papers counted">
+        <li>
+          <p class="paper-title"><a href="https://academic.oup.com/rfs/article/38/12/3768/8246070">Man versus Machine Learning Revisited</a></p>
+          <p class="paper-meta">with Yandi Zhu and Juhani T. Linnainmaa</p>
+          <div class="paper-tags"><span class="tag venue">Review of Financial Studies · 2025</span><a class="tag" href="#data">Data &amp; Code</a></div>
+        </li>
+        <li>
+          <p class="paper-title"><a href="https://academic.oup.com/rof/article/29/3/887/8056048">CEO Turnover, Sequential Disclosure, and Stock Returns</a></p>
+          <p class="paper-meta">with Jiayin Hu, Laura Xiaolei Liu, Chloe Yue Liu, and Hao Qu</p>
+          <div class="paper-tags"><span class="tag venue">Review of Finance · 2025</span></div>
+        </li>
+        <li>
+          <p class="paper-title"><a href="https://www.sciencedirect.com/science/article/abs/pii/S0927538X23002639">Expectation Disarray: Analysts’ Growth Forecast Anomaly in China</a></p>
+          <p class="paper-meta">with Laura Xiaolei Liu, Xinyu Zhang, and Yandi Zhu</p>
+          <div class="paper-tags"><span class="tag venue">Pacific-Basin Finance Journal · 2023</span></div>
+        </li>
+      </ol>
+
+      <h3>Working Papers</h3>
+      <ol class="papers">
+        <li>
+          <p class="paper-title"><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4783923">The Use and Disuse of FinTech Credit: When Buy-Now-Pay-Later Meets Credit Reporting</a></p>
+          <p class="paper-meta">with Yanfei Dong, Jiayin Hu, Yiping Huang, and Han Qiu</p>
+          <div class="paper-tags"><span class="tag">Reject &amp; Revise · JAE</span></div>
+        </li>
+        <li>
+          <p class="paper-title"><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3183318">Identifying Belief Distortions in the Cross Section of Factor Returns</a></p>
+          <p class="paper-meta">with Juhani T. Linnainmaa</p>
+          <div class="paper-tags"><span class="tag">Revise &amp; Resubmit · JFE</span></div>
+        </li>
+        <li>
+          <p class="paper-title"><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4060219">Housing Price Growth and Rental Supply Duration: Evidence from a PropTech Rental Platform</a></p>
+          <p class="paper-meta">with Jiayin Hu, Maggie Hu, Shangchen Li, and Zheng Zhang</p>
+        </li>
+        <li>
+          <p class="paper-title"><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3950009">Myopic Expectations and Stock Market Mispricing</a></p>
+          <p class="paper-meta">with Juhani T. Linnainmaa, Guofu Zhou, and Yingzi Zhu</p>
+        </li>
+        <li>
+          <p class="paper-title"><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4019170">Which Expectation?</a></p>
+          <p class="paper-meta">with Juhani T. Linnainmaa and Guofu Zhou</p>
+        </li>
+        <li>
+          <p class="paper-title"><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5250499">Short-Term Basis Reversal</a></p>
+          <p class="paper-meta">with Alberto G. Rossi and Yandi Zhu</p>
+        </li>
+        <li>
+          <p class="paper-title">The Green Costs of Debt Overhang: Evidence from Local Government Debt Restructuring</p>
+          <p class="paper-meta">with Jiayin Hu, Xiaokang Hu, and Yuchao Peng</p>
+        </li>
+      </ol>
+
+      <h3>Work in Progress</h3>
+      <ol class="papers">
+        <li>
+          <p class="paper-title">Forward Rigidity in Macro Forecasts</p>
+          <p class="paper-meta">with Junjie Guo, Haotian Xiang, Yinxi Xie, and Yandi Zhu</p>
+        </li>
+        <li>
+          <p class="paper-title">Robo-Advisor versus Robo-Manager: Human-AI Interaction in Retail Investing</p>
+          <p class="paper-meta">with Yanting Chen, Jiayin Hu, Yiping Huang, and Alberto Rossi</p>
+        </li>
+      </ol>
+
+      <h3>Publications in Chinese · 中文论文</h3>
+      <ol class="papers">
+        <li>
+          <p class="paper-title"><a href="http://www.jryj.org.cn/CN/Y2024/V523/I1/76">Extrapolative Expectations and Long-Term Rental Housing Demand: Contract-Level Evidence</a></p>
+          <p class="paper-meta">with Shangchen Li, Jiayin Hu, and Zheng Zhang</p>
+          <div class="paper-tags"><span class="tag venue">Journal of Financial Research 金融研究 · 2024</span></div>
+        </li>
+        <li>
+          <p class="paper-title"><a href="http://ccj.pku.edu.cn/article/info?aid=368081528">Policy Orientation, Official Turnover, and Corporate Bankruptcy</a></p>
+          <p class="paper-meta">with Jiayin Hu, Beichen Huang, and Haotian Xiang</p>
+          <div class="paper-tags"><span class="tag venue">China Economic Quarterly 经济学（季刊） · 2024</span></div>
+        </li>
+        <li>
+          <p class="paper-title"><a href="https://kns.cnki.net/kcms2/article/abstract?v=OHSidZhWKUn2gsliGXpvqVbTI2XQdJirg1ZtsWoXCTJzVwJEL0r20gU5dYbSwXygTexVIO8C36rLdeTWVn_tAr2HUmkPz5-kdkYx2s8fOPF-tGZjxu88EQ==&amp;uniplatform=NZKPT">Stock Analysts’ Industrial Reports and Optimism Bias</a></p>
+          <p class="paper-meta">with Shangchen Li and Zheng Zhang</p>
+          <div class="paper-tags"><span class="tag venue">China Accounting Review 中国会计评论 · 2022</span></div>
+        </li>
+      </ol>
+
+      <h3>Teaching Cases</h3>
+      <ol class="papers">
+        <li>
+          <p class="paper-title">The Fall of Silicon Valley Bank: Cause, Mechanism and Regulatory Response</p>
+          <p class="paper-meta">with Jiayin Hu, Laura Xiaolei Liu, and Niannian Wang</p>
+          <div class="paper-tags"><span class="tag venue">China Financial Professional Degree Case Center · 2023</span></div>
+        </li>
+        <li>
+          <p class="paper-title">Tsingshan’s Nickel Calamity — A Black Swan Hedging Event Linked to the Russia–Ukraine War</p>
+          <p class="paper-meta">with Laura Xiaolei Liu and Niannian Wang</p>
+          <div class="paper-tags"><span class="tag venue">PKU Management Case Research Center · 2022</span></div>
+        </li>
+        <li>
+          <p class="paper-title">The Crude Oil Treasure Crisis</p>
+          <p class="paper-meta">with Laura Xiaolei Liu and Niannian Wang</p>
+          <div class="paper-tags"><span class="tag venue">PKU Management Case Research Center · 2021</span></div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ================= DATA ================= -->
+    <section id="data">
+      <span class="sec-num">02</span>
+      <h2>Data &amp; Code</h2>
+      <h3>Man versus Machine Learning Revisited</h3>
+      <p class="bio">Data, code, and look-ahead-bias-free machine-learning earnings forecast outputs are available from the following repositories.</p>
+      <div class="links">
+        <a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/YWZJOP">Harvard Dataverse ↗</a>
+        <a href="https://github.com/yandi-zhu/Man-versus-Machine-Learning-Revisited">GitHub ↗</a>
+        <a href="https://www.dropbox.com/scl/fi/lkdikhawfcgcyswiv1mkq/Look_Ahead_Bias_Free_Earnings_Forecasts.zip?rlkey=gl2eu0usnhzngtpr5rjj0y2vo&amp;st=d4wejlo7&amp;dl=0">Dropbox archive ↗</a>
+      </div>
+    </section>
+
+    <!-- ================= TEACHING ================= -->
+    <section id="teaching">
+      <span class="sec-num">03</span>
+      <h2>Teaching</h2>
+
+      <h3>Peking University · Current</h3>
+      <dl class="rows">
+        <div>
+          <dt>Security Analysis and Investment <span class="lvl">· Undergraduate</span></dt>
+          <dd>Spring 2021 – 2026</dd>
+        </div>
+        <div>
+          <dt>Financial Risk Management <span class="lvl">· Undergraduate</span></dt>
+          <dd>Fall 2019 – 2025</dd>
+        </div>
+        <div>
+          <dt>Artificial Intelligence and Quantitative Trading Strategies <span class="lvl">· Graduate</span></dt>
+          <dd>Spring 2026</dd>
+        </div>
+        <div>
+          <dt>Valuation and Value Creation Strategies <span class="lvl">· Graduate</span></dt>
+          <dd>Summer 2026</dd>
+        </div>
+        <div>
+          <dt>Financial Risk Management <span class="lvl">· Graduate</span></dt>
+          <dd>Fall 2024, 2025</dd>
+        </div>
+      </dl>
+
+      <h3>Previously</h3>
+      <dl class="rows">
+        <div>
+          <dt>Ph.D. Empirical Asset Pricing</dt>
+          <dd>2020 – 2023 · incl. CUHK-Shenzhen</dd>
+        </div>
+        <div>
+          <dt>Investment and Asset Pricing <span class="lvl">· GSM–Tulane Master’s</span></dt>
+          <dd>Spring 2021</dd>
+        </div>
+        <div>
+          <dt>Introduction to Finance <span class="lvl">· Undergraduate</span></dt>
+          <dd>Spring 2020</dd>
+        </div>
+        <div>
+          <dt>Ph.D. Seminar in Finance I &amp; II</dt>
+          <dd>2019 – 2020</dd>
+        </div>
+        <div>
+          <dt>Business Finance (BUAD 306) <span class="lvl">· USC Marshall</span></dt>
+          <dd>Summer 2017</dd>
+        </div>
+      </dl>
+    </section>
+
+    <!-- ================= SERVICE ================= -->
+    <section id="service">
+      <span class="sec-num">04</span>
+      <h2>Service &amp; Background</h2>
+
+      <h3>Referee</h3>
+      <p class="bio">Review of Finance · Journal of Financial and Quantitative Analysis · Review of Economics and Statistics · Management Science · Journal of Empirical Finance · Pacific-Basin Finance Journal · China Economic Quarterly · Journal of Economic Management</p>
+
+      <h3>Before Academia</h3>
+      <p class="bio">AQR Capital Management (Dissertation Fellow, 2018) · BlackRock Fixed Income Global Alpha (2015) · Moody’s Analytics (2014) · Research assistant to Ulrike Malmendier, UC Berkeley (2012–13)</p>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer id="contact">
+      <span>5 Yiheyuan Rd, Guanghua Bldg #2, Office 473 · Beijing 100871</span>
+      <span><a href="mailto:yingguang.zhang@gsm.pku.edu.cn">yingguang.zhang@gsm.pku.edu.cn</a> · +86 10 6274 7626</span>
+      <span>Updated Aug 2026</span>
+    </footer>
+  </main>
+</div>
+
+</body>
+</html>
